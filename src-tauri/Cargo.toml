@@ -1,0 +1,65 @@
+[package]
+name = "link-studio"
+version = "0.1.0"
+description = "Link Studio First Demo"
+authors = ["you"]
+edition = "2021"
+default-run = "link-studio"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "link_studio_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1.53.1", features = ["full"] }
+axum = { version = "0.8.9", features = ["ws"] }
+thiserror = "2.0.20"
+anyhow = "1.0.104"
+tracing = "0.1.44"
+tracing-subscriber = "0.3.23"
+uuid = { version = "1.26.1", features = ["v4", "v5", "serde"] }
+base64 = "0.22"
+rusqlite = { version = "0.40.2", features = ["bundled"] }
+rusqlite_migration = "2.6.0"
+rcgen = { version = "0.14.10", features = ["pem", "x509-parser"] }
+rustls = { version = "0.23.45", default-features = false, features = ["ring", "std", "tls12", "logging"] }
+rustls-pemfile = "2.2.0"
+local-ip-address = "0.6.13"
+rand = "0.10.3"
+hex = "0.4.3"
+time = { version = "0.3.55", features = ["formatting", "parsing"] }
+tower-http = { version = "0.7.1", features = ["fs", "cors", "trace"] }
+axum-server = { version = "0.8.0", default-features = false, features = ["tls-rustls-no-provider"] }
+tokio-util = { version = "0.7.19", features = ["io"] }
+x509-parser = "0.18.1"
+
+[dev-dependencies]
+tower = { version = "0.5.3", features = ["util"] }
+http-body-util = "0.1.3"
+
+[[bin]]
+name = "studio-server"
+path = "src/bin/studio-server.rs"
+
+# Read the optimization guideline for more details: https://tauri.app/concept/size/#cargo-configuration
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true
+
+[target."cfg(windows)".dependencies]
+ipconfig = "0.3.4"

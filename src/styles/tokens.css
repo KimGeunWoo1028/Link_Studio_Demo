@@ -1,0 +1,87 @@
+/* Link Studio design tokens
+   Source: 1차/2차 발표 PDF (logo #004490, chevron blues, director mock charcoal). */
+
+:root {
+  --blue-navy: #004490;
+  --blue-mid: #4478b4;
+  --blue-soft: #80a4cd;
+  --blue-tint: #afc6e0;
+  --blue-accent: #1e9dfe;
+  --blue-deep: #00336d;
+  --paper: #f7f7f7;
+  --paper-card: #ffffff;
+  --hairline: #d2dbe5;
+  --ink: #102033;
+  --live-red: #d61f2c;
+  --ready-green: #1f9a5a;
+  --warn-amber: #c47b12;
+  --danger: #c62828;
+
+  --bg: #121820;
+  --surface: #181f28;
+  --elevated: #1f2932;
+  --border: #2a3540;
+  --text: #eef2f6;
+  --text-secondary: #b7c3cf;
+  --muted: #8a97a6;
+  --primary: var(--blue-navy);
+  --secondary: var(--blue-mid);
+  --accent: var(--blue-accent);
+  --success: var(--ready-green);
+  --warning: var(--warn-amber);
+  --on-air: var(--live-red);
+  --offline: #6b7784;
+  --focus: #5eb8ff;
+
+  --font-ui: "Segoe UI Variable", "Segoe UI", "Malgun Gothic", sans-serif;
+  --font-size-display: 1.375rem;
+  --font-size-heading: 0.8125rem;
+  --font-size-body: 0.875rem;
+  --font-size-label: 11px;
+  --font-size-meta: 0.75rem;
+  --font-size-status: 0.6875rem;
+  --leading-body: 1.45;
+  --leading-heading: 1.2;
+  --tracking-label: 0.06em;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.28);
+  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.28);
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur: 160ms;
+
+  --btn-bg: var(--primary);
+  --btn-fg: #fff;
+  --chip-live-bg: color-mix(in srgb, var(--on-air) 18%, var(--elevated));
+  --monitor-bg: #07090c;
+  --monitor-black: #000000;
+  --error-fg: #ffb4b4;
+  --pip-frame: #ffffff;
+}
+
+.camera-page {
+  --bg: var(--paper);
+  --surface: var(--paper-card);
+  --elevated: #eef3f8;
+  --border: var(--hairline);
+  --text: var(--ink);
+  --text-secondary: #3d4d5e;
+  --muted: #5d6b7a;
+  --primary: var(--blue-navy);
+  --accent: var(--blue-navy);
+  --focus: var(--blue-navy);
+  --shadow-1: 0 1px 2px rgba(16, 32, 51, 0.08);
+  --shadow-2: 0 10px 28px rgba(16, 32, 51, 0.1);
+}
