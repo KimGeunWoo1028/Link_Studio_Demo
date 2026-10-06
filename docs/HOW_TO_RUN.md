@@ -18,7 +18,7 @@
 ## 1. 코드 받기
 
 ```powershell
-git clone -b GeunWoo https://github.com/gwada-chulhyeol/link-studio-test.git
+git clone -b geunwoo-linkstudio-demo https://github.com/gwada-chulhyeol/link-studio-test.git
 cd link-studio-test
 ```
 
